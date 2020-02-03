@@ -2,3 +2,21 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+.main-refresh{
+  background-color: #c5ebfd;
+}
+
+.swiper-slide {
+  display: block;
+}
+
+ion-slide > h2 {
+  margin-top: 2.8rem;
+}
+
+ion-slide > img {
+  max-height: 60%;
+  max-width: 100%;
+  margin: 0px 0;
+}

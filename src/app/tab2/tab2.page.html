@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Moviesfy
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" class="main-refresh">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  
+    <ion-card class="welcome-card">
+      <img src="/assets/joker.jpg" alt="" />
+      <ion-card-header>
+        <ion-card-subtitle>Película del momento</ion-card-subtitle>
+        <ion-card-title>El Bromas!</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    
+    <ion-list>
+      <ion-item button (click)="presentActionSheet(item)" *ngFor="let item of moviesList">
+        {{ item.name }}
+      </ion-item>
+    </ion-list>
+</ion-content>
