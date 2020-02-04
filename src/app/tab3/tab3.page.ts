@@ -17,8 +17,6 @@ export class Tab3Page {
   newduration: any;
 
   constructor(private movieService: MovieService) {
-    const stageMovie = this.movieService.stagingData();
-    console.log(stageMovie);
   
   }
 
@@ -26,21 +24,12 @@ export class Tab3Page {
     
   }
 
-  getStage():void {
-    const stageMovie = this.movieService.stagingData();
-    this.newname = stageMovie.name;
-  }
-
   logForm() {
     console.log(this.newname)
   }
 
   movieRegister(newname: any, newdescription: any, newyear: any, newgenre: any, newduration: any): void{
-    if(this.id != "" || this.id != null){
-      this.updateMovie(this.id, newname, newdescription, newyear, newgenre, newduration);
-    }else{
       this.saveMovie(newname, newdescription, newyear, newgenre, newduration);
-    }
   }
 
   saveMovie(newname: any, newdescription: any, newyear: any, newgenre: any, newduration: any): void {

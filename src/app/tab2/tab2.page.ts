@@ -32,7 +32,7 @@ export class Tab2Page {
         {
           text: 'Modificar',
           handler: () => {
-            this.addMovieStage(item);
+            console.log("modificar");
           }
         },{
           text: 'Eliminar',
@@ -40,7 +40,7 @@ export class Tab2Page {
             this.deleteMovie(item.id);
           }
         },{
-          text: '',
+          text: 'Cancelar',
           role: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
@@ -63,11 +63,6 @@ export class Tab2Page {
 
     console.log(this.moviesList);
   }
-
-  addMovieStage(movie): void {
-    this.movieService.addStagingData(movie);
-  }
-
 
   getAllMovies(): void {
     this.moviesList = [];

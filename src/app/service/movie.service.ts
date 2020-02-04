@@ -57,12 +57,4 @@ export class MovieService {
   deleteMovie(id: any): any {
     return this.http.delete(`${this.url}` + "/" + id);
   }
-
-  stagingData(): any {
-    return this.stageMovie;
-  }
-
-  addStagingData(movie: any): any{
-    this.stageMovie = movie;
-  }
 }
