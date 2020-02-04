@@ -7,8 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class MovieService {
 
-  url = 'https://moviesfy.herokuapp.com/api/movies';
-
+  //url = 'https://moviesfy.herokuapp.com/api/movies';
+  url = 'http://127.0.0.1:8000/api/movies';
   stageMovie = {
     id: "",
     name: "",

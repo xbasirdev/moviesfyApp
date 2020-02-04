@@ -26,7 +26,8 @@
     
     <ion-list>
       <ion-item button (click)="presentActionSheet(item)" *ngFor="let item of moviesList">
-        {{ item.name }}
+        <ion-label style="font-size: 16px;">{{ item.name}}</ion-label>
+        <div><p style="font-size: 12px; color: #ccc;">{{item.genre}} / {{item.year}} / Duración:{{ item.duration}}</p></div>
       </ion-item>
     </ion-list>
 </ion-content>
