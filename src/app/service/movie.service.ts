@@ -7,8 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class MovieService {
 
-  //url = 'https://moviesfy.herokuapp.com/api/movies';
-  url = 'http://127.0.0.1:8000/api/movies';
+  url = 'https://moviesfy.herokuapp.com/api/movies';
+  //url = 'http://127.0.0.1:8000/api/movies';
   stageMovie = {
     id: "",
     name: "",
@@ -52,6 +52,14 @@ export class MovieService {
     console.log("this is the movie");
     console.log(updateMovie);
     return this.http.post(`${this.url}` + "/" + data.id, updateMovie);
+  }
+
+  stageData(data: any): any{
+    this.stageMovie = data;
+  }
+
+  GetStageData(){
+    return this.stageMovie;
   }
 
   deleteMovie(id: any): any {
