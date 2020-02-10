@@ -51,7 +51,7 @@ export class MovieService {
     };
     console.log("this is the movie");
     console.log(updateMovie);
-    return this.http.post(`${this.url}` + "/" + data.id, updateMovie);
+    return this.http.put(`${this.url}` + "/" + data.id, updateMovie);
   }
 
   stageData(data: any): any{

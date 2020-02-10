@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Moviesfy</string>
+    <string name="title_activity_main">Moviesfy</string>
+    <string name="package_name">com.moviesfy.xb</string>
+    <string name="custom_url_scheme">com.moviesfy.xb</string>
+</resources>

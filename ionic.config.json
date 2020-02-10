@@ -1,5 +1,7 @@
 {
   "name": "moviesfy",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { Injectable } from '@angular/core';
 
 const routes: Routes = [
   {
@@ -55,4 +56,9 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+
+
+@Injectable()
+export class TabsPageRoutingModule {
+  
+}

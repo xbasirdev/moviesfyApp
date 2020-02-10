@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieService } from '../service/movie.service';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, ModalController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+
+import { UpdateModalPage } from '../modals/update-modal/update-modal.page';
+
 
 @Component({
   selector: 'app-tab2',
@@ -18,12 +21,23 @@ export class Tab2Page {
     id: any, name: any, year: any, genre: any, description: any, duration: any
   }>;
 
-  constructor(private movieService: MovieService, private actionSheetCtrl: ActionSheetController, public loadingController: LoadingController, public alertController: AlertController) {
+  constructor(private movieService: MovieService, private actionSheetCtrl: ActionSheetController, public loadingController: LoadingController, 
+    public alertController: AlertController, private modalController: ModalController) {
     this.getAllMovies();
   }
 
   ngOnInit(): void {
 
+  }
+
+  async openModal(item: any){
+    const modal = await this.modalController.create({
+      component: UpdateModalPage,
+      componentProps: {
+        'movie': item
+      }
+    });
+    return await modal.present();
   }
 
   async sucessAlert() {
@@ -57,7 +71,7 @@ export class Tab2Page {
         {
           text: 'Modificar',
           handler: () => {
-            console.log("modificar");
+            this.openModal(item);
           }
         },{
           text: 'Eliminar',

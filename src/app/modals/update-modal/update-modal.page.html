@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Película
+      <ion-button (click)="closeModal()" style="margin-left: 30%;">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" required [(ngModel)]="newname" name="title" clearInput id="nameInput"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Año</ion-label>
+      <ion-input type="number" required [(ngModel)]="newyear" name="year"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Género</ion-label>
+      <ion-select required [(ngModel)]="newgenre" name="genre">
+        <ion-select-option value="Comedia"  name="genre">Comedia</ion-select-option>
+        <ion-select-option value="Terror" name="genre">Terror</ion-select-option>
+        <ion-select-option value="Ciencia ficción" name="genre">Ciencia ficción</ion-select-option>
+        <ion-select-option value="Romance" name="genre">Romance</ion-select-option>
+        <ion-select-option value="Biografía" name="genre">Biografía</ion-select-option>
+        <ion-select-option value="Infantil" name="genre">Infantil</ion-select-option>
+        <ion-select-option value="Otro" name="genre">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Duración</ion-label>
+      <ion-input type="text" required [(ngModel)]="newduration" name="duration"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripción</ion-label>
+      <ion-textarea required [(ngModel)]="newdescription" name="description"></ion-textarea>
+    </ion-item>
+    <br>
+    <ion-button expand="block" ion-button id="bot" type="submit" block (click)="movieRegister(newname, newdescription, newyear, newgenre, newduration)">Actualizar Película</ion-button>
+  </form>
+</ion-content>
